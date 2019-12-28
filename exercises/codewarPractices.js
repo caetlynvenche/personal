@@ -175,3 +175,111 @@ function spinWords(str){
   })
   return mappedArr.join(" ")
 }
+
+//uppercase every even letter in every word. lower rest. return again as string
+
+function toWeirdCase(string){
+  let arr = string.split(" ")
+  let newArr = []
+  
+  for(let i = 0; i < arr.length; i++) {
+    let count = 0
+    let wordArr = arr[i].split("")
+    let newWordArr = []
+    
+    for (let j = 0; j < wordArr.length; j++) {
+        if(count % 2 === 0) {
+          newWordArr.push(wordArr[j].toUpperCase())
+          count++
+        } else {
+          newWordArr.push(wordArr[j].toLowerCase())
+          count++
+        }
+    }
+    newArr.push(newWordArr.join(""))
+  }
+  
+  
+  let result = newArr.join(" ")
+  return result
+}
+
+//return main part of a url
+
+function domainName(url){
+  //your code here
+  let arr = url.split("/")
+  let innerArr
+  if(arr[0] === 'http:' || arr[0] === 'https:') {
+    innerArr = arr[2]
+  } else {
+    innerArr = arr[0]
+  }
+  innerArr = innerArr.split(".")
+  
+  if(innerArr[0] === 'www') {
+    return innerArr[1]
+  } else {
+    return innerArr[0]
+  }
+}
+
+//UpperCase first letter of every word in string, except any words from excluded word list
+
+function titleCase(title, minorWords) {
+  if(title === '') {
+    return ''
+  }
+  
+  let arr = title.split(" ")
+  let otherWordsArr
+  if (minorWords) {
+    otherWordsArr = minorWords.split(" ")
+  } else {
+    otherWordsArr = []
+  }
+  
+  let finalArr = []
+  
+  let mappedArr = arr.map((word) => {
+    let theWord = word.toLowerCase()
+    let wordArr = theWord.split("")
+    wordArr[0] = wordArr[0].toUpperCase()
+    let wordResult = wordArr.join("")
+    return wordResult
+  })
+  
+  if (minorWords === undefined) {
+    return mappedArr.join(" ")
+  }
+  
+  let mappedOtherWords = otherWordsArr.map((word) => {
+    return word.toLowerCase()
+  })
+  
+  for(let i = 0; i < mappedArr.length; i++) {
+    if(i === 0) {
+      finalArr.push(mappedArr[0])
+    } else {
+      //for loop to check word against each of other words
+      let toggle = false
+      
+      for(let j = 0; j < mappedOtherWords.length; j++) {
+        let lowercaseWord = mappedArr[i].toLowerCase()
+        if(lowercaseWord === mappedOtherWords[j]) {
+          finalArr.push(mappedOtherWords[j])
+          toggle = true
+          break
+        }
+      }
+      
+      if (toggle === false) {
+        finalArr.push(mappedArr[i])
+        toggle = true
+      }
+      
+    }
+  }
+  
+  return finalArr.join(" ")
+}
