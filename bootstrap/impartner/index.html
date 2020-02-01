@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Impartner Practice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container backgroundImage">
+        <!-- <img src="assets/green-background.png" alt="green-background" class="backgroundImage"> -->
+        <div class="row rowHeight">
+            <div class="col-lg-3"><img onclick="handleMask()" class="quarter" src="assets/sun.jpeg" alt="sun"></div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <div class="row rowHeight">
+            <div class="col-lg-8"></div>
+            <div class="col"><img id="mask" class="quarter hidden" src="assets/mask.jpg" alt="mask"></div>
+        </div>
+
+        <div class="row rowHeight">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue mauris rhoncus aenean vel elit. Fermentum odio eu feugiat pretium. Faucibus a pellentesque sit amet porttitor eget dolor morbi. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est.</p>
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Open modal</button>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col"><img src="assets/flower.jpg" alt="flower" class="flower"></div>
+                            <div class="col"><img src="assets/flower.jpg" alt="flower" class="flower"></div>
+                            <div class="col"><img src="assets/flower.jpg" alt="flower" class="flower"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
