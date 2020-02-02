@@ -8,10 +8,6 @@ body {
     padding: 30px;
 }
 
-.border {
-    border: 1px solid black;
-}
-
 .backgroundImage {
     /* width: 100%; */
     height: 500px;
@@ -22,14 +18,7 @@ body {
 .quarter {
     width: 100px;
     height: 100px;
-}
-
-.rowHeight {
-    height: 150px;
-}
-
-.hidden {
-    display: none;
+    margin: 25px;
 }
 
 .flower {
