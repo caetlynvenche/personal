@@ -283,3 +283,99 @@ function titleCase(title, minorWords) {
   
   return finalArr.join(" ")
 }
+
+//Hashtag generator
+
+function generateHashtag (str) {
+  const strArr = str.split("")
+  const arr = []
+  let newWord = true
+  
+    for (let i = 0; i < str.length; i++) {
+      if (strArr[i] !== " ") {
+        if (newWord === true) {
+          arr.push(strArr[i].toUpperCase())
+          newWord = false
+        } else {
+          arr.push(strArr[i])
+        }
+      } else if(strArr[i] === " ") {
+        newWord = true
+      }
+    }
+    
+    if (arr.length >= 140 || arr.length === 0) {
+      return false
+    } else {
+      arr.unshift("#")
+      return arr.join("")
+    }
+  }
+
+  /*
+┌───┬───┬───┐
+│ 1 │ 2 │ 3 │
+├───┼───┼───┤
+│ 4 │ 5 │ 6 │
+├───┼───┼───┤
+│ 7 │ 8 │ 9 │
+└───┼───┼───┘
+    │ 0 │
+    └───┘
+    */
+
+//Observed numbers on pin might have been an ajacent number. Find all potential pins
+  function getPINs(observed) {
+    let observedString = observed.toString()
+    const split = observedString.split("")
+
+    console.log("starting keys", split)
+
+    const keyKey = {
+      "0": {
+        length: 1,
+        alts: ["8"]},
+      "1": {
+        length: 2,
+        alts: ["2", "4"]},
+      "2": {
+        length: 3,
+        alts: ["1", "3", "5"]},
+      "3": {
+        length: 2,
+        alts: ["2", "6"]},
+      "4": {
+        length: 2,
+        alts: ["1", "5"]},
+      "5": {
+        length: 4,
+        alts: ["4", "2", "6", "8"]},
+      "6": {
+        length: 3,
+        alts: ["3", "5", "9"]},
+      "7": {
+        length: 2,
+        alts: ["4", "8"]},
+      "8": {
+        length: 2,
+        alts: ["5", "7", "9", "0"]},
+      "9": {
+        length: 2,
+        alts: ["6", "8"]}
+    }
+
+    const runSet = () => {
+      //
+    }
+    
+    const potentials = [observed] // hold potential codes 
+
+    for (let i = 0; i < observed.length; i++) {
+      //for loop where it goes through each potential change. Need more nested for loops?
+      //for each of origional slots
+    }
+  }
+
+  console.log(getPINs(345))
+  console.log(getPINs(82))
+  console.log(getPINs(9974))
