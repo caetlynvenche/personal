@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>Easy Hangman</header>
+    <div>
+        <h2>Guesses Remaining</h1>
+        <h2 id='guesses-left'></h2>
+    </div>
+    <form onsubmit='guessWord(event)'>
+        <input id='guess' type='text' class='guess' placeholder="Guess A Letter" />
+    </form>
+    <button onClick='startGame()'>Reset</button>
+    <h1 id='win-or-lose'></h1>
+    <h2 id='correct-answer'></h2>
+    <div>
+        <h2>Guesses</h2>
+        <ul id='guessed-letters'>
+
+        </ul>
+    </div>
+    <script src='main.js'></script>
+</body>
+</html>
